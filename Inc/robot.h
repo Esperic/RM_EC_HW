@@ -24,12 +24,30 @@ struct RobotPos{
     float pitch; // deg
 };
 
-RobotPos* moveRobot(RobotPos *pos, float dx, float dy);
-
 struct RobotHP{
     int hp;
     int max_hp;
 };
 
+struct Robot{
+    RobotPos robotpos;
+    RobotHP robothp;
+    ShootParam shoot_param;
+};
+
+struct Team{
+    Robot hero;
+    Robot engineer;
+    Robot infantry;
+};
+
+struct ShootParam{
+    float speed;
+    float lethality;
+    float hit_possibility;
+};
+
+RobotPos* moveRobot(RobotPos *pos, float dx, float dy);
+int reduceHP(Robot *robot,int lethality);
 
 #endif //HW1_ROBOT_H

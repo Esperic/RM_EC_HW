@@ -8,5 +8,6 @@
 int main() {
     RobotPos pos{0,0,0,0};
     moveRobot(&pos, 1, 20000);
+    int a;
     return 0;
 }
